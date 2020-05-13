@@ -1,8 +1,8 @@
-# __Online Scripts__
-__initializer__
+# __Initializer__
+__Scripts__
 
 ------
 ## Docker Proxy
 ```bash
-curl -fsSL https://raw.githubusercontent.com/lambdayo/initializer/master/docker-proxy.sh | bash -s -- -i -s 192.168.1.1:1080
+curl -fsSL https://raw.githubusercontent.com/lambdayo/initializer/master/docker-proxy.sh | bash -s -- -i -s 192.168.1.1
 ```
