@@ -1,3 +1,7 @@
+# install repositories
+yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install -y https://repo.ius.io/ius-release-el7.rpm
+yum makecache
 # disable selinux
 sed -i 's/^SELINUX=enforcing$/SELINUX=disabled/g' /etc/selinux/config
 # unmount swap
@@ -8,10 +12,6 @@ systemctl disable firewalld
 timedatectl set-timezone Asia/Shanghai
 # enable ntp
 yum install -y ntp && systemctl enable ntpd
-# install repositories
-yum install -y https://repo.ius.io/ius-release-el7.rpm
-yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-yum makecache
 # set ulimit
 cat <<EOF > /etc/security/limits.d/90-nproc.conf
 * soft nproc 262144
