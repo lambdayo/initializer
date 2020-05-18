@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# set hostname
+if [ $1 ]; then hostnamectl set-hostname $1 --static; fi
 # install repositories
 yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 yum install -y https://repo.ius.io/ius-release-el7.rpm
