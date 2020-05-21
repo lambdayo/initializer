@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # set hostname
 if [ $1 ]; then hostnamectl set-hostname $1 --static; fi
