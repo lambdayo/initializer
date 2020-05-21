@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 DIR=/etc/systemd/system/docker.service.d
 SERVER_ADDRESS=SERVER_ADDRESS
