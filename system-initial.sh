@@ -6,7 +6,7 @@ if [ $1 ]; then hostnamectl set-hostname $1 --static; fi
 yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 yum install -y https://repo.ius.io/ius-release-el7.rpm
 yum makecache
-yum install -y net-tools bind-utils wget nano git
+yum install -y net-tools bind-utils wget nano git htop
 # disable selinux
 sed -i 's/^SELINUX=enforcing$/SELINUX=disabled/g' /etc/selinux/config
 # unmount swap
