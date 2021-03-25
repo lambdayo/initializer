@@ -46,7 +46,7 @@ vm.max_map_count = 262144
 EOF
 cat <<EOF > /etc/sysctl.d/90-net.conf
 net.ipv4.tcp_tw_reuse = 1
-net.ipv4.ip_local_port_range = 1024 64999
+net.ipv4.ip_local_port_range = 8192 64999
 net.ipv4.tcp_max_syn_backlog = 8192
 net.core.somaxconn = 8192
 net.ipv4.tcp_max_orphans = 8192
