@@ -21,8 +21,6 @@ sed -i 's/.*swap.*/#&/' /etc/fstab
 systemctl disable firewalld
 # set timezone
 timedatectl set-timezone Asia/Shanghai
-# enable ntp
-yum install -y ntp && systemctl enable ntpd
 # set ulimit
 cat <<EOF > /etc/security/limits.d/90-nproc.conf
 * soft nproc 262144
