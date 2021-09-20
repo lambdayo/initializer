@@ -6,7 +6,7 @@ if [ $1 ]; then hostnamectl set-hostname $1 --static; fi
 yum install -y https://mirrors.aliyun.com/epel/epel-release-latest-7.noarch.rpm
 yum install -y https://mirrors.aliyun.com/ius/ius-release-el7.rpm
 sed -i -e 's/^metalink=/#&/g' -e 's/^#baseurl=/baseurl=/g' \
--e 's#download.fedoraproject.org/pub#mirrors.aliyun.com#g' \
+-e 's#download.example/pub#mirrors.aliyun.com#g' \
 /etc/yum.repos.d/epel.repo /etc/yum.repos.d/epel-testing.repo
 sed -i -e 's#repo.ius.io#mirrors.aliyun.com/ius#g' \
 /etc/yum.repos.d/ius-archive.repo /etc/yum.repos.d/ius.repo /etc/yum.repos.d/ius-testing.repo
