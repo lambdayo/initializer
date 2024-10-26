@@ -3,10 +3,11 @@
 # set hostname
 if [ $1 ]; then hostnamectl set-hostname $1 --static; fi
 # install repositories
-yum install -y https://mirrors.aliyun.com/epel/epel-release-latest-7.noarch.rpm
+sed -i -e 's|^mirrorlist=|#mirrorlist=|g' -e 's|^#baseurl=http://mirror.centos.org/centos/\$releasever|baseurl=https://mirrors.aliyun.com/centos-vault/7.8.2003|g' \
+/etc/yum.repos.d/CentOS-*.repo
+yum install -y epel-release
 yum install -y https://mirrors.aliyun.com/ius/ius-release-el7.rpm
-sed -i -e 's/^metalink=/#&/g' -e 's/^#baseurl=/baseurl=/g' \
--e 's#download.example/pub#mirrors.aliyun.com#g' \
+sed -i -e 's/^metalink=/#&/g' -e 's/^#baseurl=/baseurl=/g' -e 's#download.fedoraproject.org/pub#mirrors.aliyun.com#g' \
 /etc/yum.repos.d/epel.repo /etc/yum.repos.d/epel-testing.repo
 sed -i -e 's#repo.ius.io#mirrors.aliyun.com/ius#g' \
 /etc/yum.repos.d/ius-archive.repo /etc/yum.repos.d/ius.repo /etc/yum.repos.d/ius-testing.repo
